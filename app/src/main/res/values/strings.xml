@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Path: app/src/main/res/values/strings.xml
+    Purpose: Store all text strings used in the app
+    Makes it easy to change text or translate the app
+-->
+
+<resources>
+    <!-- App name -->
+    <string name="app_name">GPS Location Tracker</string>
+
+    <!-- Main activity strings -->
+    <string name="app_title">Location Tracker</string>
+    <string name="latitude_label">Latitude: Waiting for GPS…</string>
+    <string name="longitude_label">Longitude: Waiting for GPS…</string>
+    <string name="accuracy_label">Accuracy: Calculating…</string>
+    <string name="map_button_text">View Tracking Map</string>
+    <string name="status_initializing">Status: Initializing GPS…</string>
+
+    <!-- Status messages -->
+    <string name="gps_enabled">GPS Activated Successfully</string>
+    <string name="gps_disabled">GPS is Turned Off - Enable in Settings</string>
+    <string name="location_saved">Location Saved to Server</string>
+    <string name="location_updated">Location Updated: %1$.4f, %2$.4f</string>
+
+    <!-- Map activity strings -->
+    <string name="map_loading">Loading locations…</string>
+    <string name="map_loaded">Loaded %1$d locations</string>
+    <string name="map_error">Failed to load map data</string>
+    <string name="refresh_button">Refresh Map</string>
+
+    <!-- Permission strings -->
+    <string name="permission_granted">Location Permission Granted</string>
+    <string name="permission_denied">Location Permission is Required</string>
+    <string name="permission_request">GPS tracking needs location permission</string>
+</resources>

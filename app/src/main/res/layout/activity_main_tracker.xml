@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Path: app/src/main/res/layout/activity_main_tracker.xml
+    Purpose: Main screen layout showing GPS coordinates and controls
+    Design: Card-based layout with orange theme
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/backgroundColor"
+    android:gravity="center">
+
+    <!-- App icon using built-in compass drawable -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@android:drawable/ic_menu_compass"
+        android:layout_gravity="center"
+        android:contentDescription="GPS Compass Icon"
+        android:tint="@color/primaryColor"
+        android:alpha="0.9" />
+
+    <!-- App title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS Location Tracker"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/primaryDarkColor"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Real-time Position Tracking"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <!-- GPS coordinates card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/cardBackground"
+        app:strokeColor="@color/primaryLightColor"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Latitude display -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:tint="@color/primaryColor"
+                    android:contentDescription="Latitude icon" />
+
+                <TextView
+                    android:id="@+id/displayLatitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/latitude_label"
+                    android:textSize="18sp"
+                    android:textColor="@color/textPrimary"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <!-- Longitude display -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:tint="@color/accentColor"
+                    android:contentDescription="Longitude icon" />
+
+                <TextView
+                    android:id="@+id/displayLongitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/longitude_label"
+                    android:textSize="18sp"
+                    android:textColor="@color/textPrimary"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <!-- Accuracy display -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:tint="@color/textSecondary"
+                    android:contentDescription="Accuracy icon" />
+
+                <TextView
+                    android:id="@+id/displayAccuracy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/accuracy_label"
+                    android:textSize="14sp"
+                    android:textColor="@color/textSecondary"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Map button -->
+    <Button
+        android:id="@+id/openMapButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Open Tracking Map"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/textOnPrimary"
+        android:backgroundTint="@color/primaryColor"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        app:cornerRadius="12dp" />
+
+    <!-- Status indicator -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/surfaceColor">
+
+        <TextView
+            android:id="@+id/connectionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/status_initializing"
+            android:textSize="14sp"
+            android:textColor="@color/textSecondary"
+            android:gravity="center"
+            android:fontFamily="monospace" />
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Lab12GPSTracker" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/textOnPrimary</item>
+        <item name="colorPrimaryContainer">@color/primaryLightColor</item>
+        <item name="colorOnPrimaryContainer">@color/primaryDarkColor</item>
+        <item name="colorSecondary">@color/accentColor</item>
+        <item name="colorOnSecondary">@color/textOnPrimary</item>
+        <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="colorOnBackground">@color/textPrimary</item>
+        <item name="colorSurface">@color/surfaceColor</item>
+        <item name="colorOnSurface">@color/textPrimary</item>
+        <item name="android:statusBarColor">@color/primaryDarkColor</item>
+    </style>
+</resources>
